@@ -46,6 +46,11 @@
             background-color:#f9f9f9;
         }
 
+        #perpage{
+            width: 90px;
+        }
+
+
     </style>
 
 
@@ -59,18 +64,12 @@
 
 <h1>Users List</h1>
 
-<tr>Search by name</tr>
 <tr>
 <form:form method="get">
-    <input type="text" name="searchName" value="${searchName}"/><br/>
-    <input type="submit"
-           value="Lookup User" />
+    <input type="text" name="searchName" placeholder="search by name" value="${searchName}"/><br/>
+    <input type="submit" value="Lookup User"/>
+    <button type="submit" value="null">Reset</button>
 </form:form>
-    <form:form method="get">
-        <input type="hidden" name="searchName" value="">
-        <input type="submit"
-               value="Escape" />
-    </form:form>
 </tr>
 <c:if test="${!empty listUsers}">
     <table class ="tg">
@@ -101,7 +100,6 @@
         </c:forEach>
     </table>
     <tr>
-        <div id="pagination">
             <c:url value="/users" var="prev">
                 <c:param name="page" value="${page-1}"/>
             </c:url>
@@ -128,6 +126,9 @@
             <a href='<c:out value="${next}" />' class="pn next">Next</a>
             </c:if>
     </tr>
+</c:if>
+<c:if test="${empty listUsers}">
+    <h1>There is no users with a such name</h1>
 </c:if>
 
 

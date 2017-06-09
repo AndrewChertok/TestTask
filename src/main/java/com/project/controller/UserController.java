@@ -49,7 +49,7 @@ public class UserController {
             return "redirect:/userdata";
     }
 
-    //Создаем отдельные страницы. Например, эта страница чтобы просмотреть пользователя отдельно
+
     @RequestMapping("userdata/{id}")
     public String userData(@PathVariable("id") int id, Model model){
         model.addAttribute("user", this.userService.getUserById(id));
@@ -71,7 +71,7 @@ public class UserController {
              }
              if(users == null) userService.listUsers();
         PagedListHolder<User> pagedListHolder = new PagedListHolder<User>(users);
-        pagedListHolder.setPageSize(10);
+        pagedListHolder.setPageSize(12);
         modelAndView.addObject("maxPages", pagedListHolder.getPageCount());
 
         if(page==null || page < 1 || page > pagedListHolder.getPageCount())
