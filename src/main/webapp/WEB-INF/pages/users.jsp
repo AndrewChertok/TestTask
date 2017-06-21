@@ -1,8 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix ="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix ="form" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix ="from" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page session="false" %>
 
 <html>
@@ -133,6 +132,7 @@
 
 
 <h1>Add User</h1>
+
 
 
 <c:url var="addAction" value="/users/add"/>

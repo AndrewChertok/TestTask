@@ -90,7 +90,6 @@ public class UserController {
 
         modelAndView.addObject("user", new User());
 
-        System.out.println(users.size()+"= SIZE USERS");
         return modelAndView;
     }
 

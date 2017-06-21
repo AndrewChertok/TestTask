@@ -60,7 +60,6 @@
         <property name="userDao" ref = "userDao"/>
     </bean>
 
-    <context:component-scan base-package="com.project"/>
 
     <tx:annotation-driven transaction-manager="transactionManager" />
 
